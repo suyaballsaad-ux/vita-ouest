@@ -1,0 +1,8 @@
+{
+  "name": "NutriFit AI",
+  "description": "AI-powered nutrition and fitness companion with food scanning, personalized goals, and workout tracking.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

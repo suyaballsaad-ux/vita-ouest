@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-green: var(--brand-primary);
+  --color-brand-dark: var(--brand-bg);
+  --color-brand-surface: var(--brand-surface);
+}
+
+@layer base {
+  :root {
+    --brand-primary: #A3E635;
+    --brand-bg: #000000;
+    --brand-surface: #111111;
+    --brand-text: #FFFFFF;
+    --brand-accent-bg: rgba(163, 230, 53, 0.1);
+    --brand-accent-border: rgba(163, 230, 53, 0.2);
+    --brand-border: rgba(255, 255, 255, 0.1);
+    --brand-nav: rgba(0, 0, 0, 0.8);
+  }
+
+  body {
+    @apply bg-brand-dark text-[var(--brand-text)] font-sans antialiased selection:bg-brand-green selection:text-black transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[var(--brand-surface)] backdrop-blur-xl border border-[var(--brand-border)] rounded-[32px];
+  }
+
+  .green-gradient-card {
+    @apply bg-gradient-to-br from-[#A3E635] to-[#4D7C0F] text-black rounded-[32px] shadow-lg shadow-brand-green/20;
+  }
+
+  .dark-gradient-card {
+    @apply bg-[var(--brand-surface)] border border-[var(--brand-border)] rounded-[32px];
+  }
+
+  .nav-pill {
+    @apply bg-[var(--brand-nav)] backdrop-blur-2xl border border-[var(--brand-border)] rounded-full p-1.5 flex items-center justify-between shadow-2xl;
+  }
+
+  .nav-item {
+    @apply p-3.5 rounded-full transition-all duration-500 flex items-center justify-center text-[var(--brand-text)] opacity-40;
+  }
+
+  .nav-item-active {
+    @apply bg-brand-green text-black shadow-xl shadow-brand-green/40 scale-110 opacity-100;
+  }
+
+  .apple-button-primary {
+    @apply bg-brand-green text-black font-bold px-8 py-4 rounded-full transition-all active:scale-95 hover:brightness-110 disabled:opacity-50;
+  }
+
+  .apple-button-secondary {
+    @apply bg-[var(--brand-surface)] text-[var(--brand-text)] border border-[var(--brand-border)] font-medium px-8 py-4 rounded-full transition-all active:scale-95 hover:opacity-80;
+  }
+
+  .apple-input-v2 {
+    @apply bg-[var(--brand-surface)] border border-[var(--brand-border)] rounded-2xl px-5 py-4 focus:outline-none focus:border-brand-green/50 transition-all text-lg text-[var(--brand-text)];
+  }
+
+  .list-item {
+    @apply flex items-center justify-between p-4 bg-[var(--brand-surface)] rounded-2xl border border-[var(--brand-border)] hover:opacity-80 transition-all;
+  }
+
+  .icon-circle {
+    @apply w-12 h-12 rounded-full flex items-center justify-center bg-[var(--brand-surface)] border border-[var(--brand-border)];
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
